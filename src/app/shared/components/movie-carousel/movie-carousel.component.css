@@ -1,0 +1,83 @@
+.swiper-slide {
+    transition: all 150ms ease-in-out;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    height: inherit;
+}
+
+.desc {
+    transition: all 150ms ease-in-out;
+    background-color: rgba(24, 24, 24, 0.77);
+    height: 190px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.desc:hover {
+    transition: all 150ms ease-in-out;
+}
+
+
+.desc.tv {
+    height: 60px;
+}
+
+.swiper-slide img {
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px !important;
+    height: 300px !important;
+    object-fit: cover;
+}
+
+.swiper-slide.inactive {
+    cursor: grabbing;
+}
+
+.swiper-slide:hover {
+    transform: scale(1.25);
+    transition: all 150ms ease-in-out;
+    transition-delay: 150ms;
+    z-index: 1;
+}
+
+.swiper-slide:hover img {
+    transition-delay: 150ms;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+} 
+
+
+/* ---------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------- */
+/* Media query for screens with a max-width of 599px */
+@media screen and (max-width: 599px) {
+    .swiper-slide img {
+        max-width: 14rem; /* Adjust image max-width for small screens */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none; /* Hide navigation buttons on small screens */
+    }
+}
+
+/* Media query for screens with a max-width of 400px */
+@media screen and (max-width: 400px) {
+    .swiper-slide img {
+         /* Further adjust image max-width for smaller screens */
+        max-width: 10.5rem;
+        /* Reduce border-radius for smaller images */
+        border-radius: 2px;  
+    }
+}

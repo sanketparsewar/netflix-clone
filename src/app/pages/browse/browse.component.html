@@ -1,0 +1,27 @@
+<app-header [fullName]="name" [userImage]="picture" (onClick)="signOut()"></app-header>
+
+<!-- here we are passing the dynamic value as title of first movie -->
+<app-banner [bannerTitle]="(bannerDetails$ | async)?.original_title"
+    [bannerOverview]="(bannerDetails$ | async)?.overview" [key]="(bannerVideo$ | async)?.results[0].key"></app-banner>
+
+<main class="bg-dark overflow-x-hidden">
+    <app-movie-carousel [videoContents]="movies" [title]="'Featured Movies'"></app-movie-carousel>
+    <app-movie-carousel [videoContents]="tvShows" [title]="'Tv Shows'"></app-movie-carousel>
+    <app-movie-carousel [videoContents]="popularMovies" [title]="'Popular Movies'"></app-movie-carousel>
+    <app-movie-carousel [videoContents]="nowPlayingMovies" [title]="'Now Playing Movies'"></app-movie-carousel>
+    <app-movie-carousel [videoContents]="topRated" [title]="'Top Rated'"></app-movie-carousel>
+    <app-movie-carousel [videoContents]="upComingMovies" [title]="'UpComing Movies'"></app-movie-carousel>
+</main>
+
+
+
+
+<!-- <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> <button
+                class="btn btn-secondary"> <img [src]="picture" height="100" width="100" /></button> <span
+                class="name mt-3">{{name}}</span> <span class="idd">{{email}}</span>
+            <div class=" d-flex mt-2"> <button (click)="signOut()" class="btn btn-dark">Sign Out</button> </div>
+        </div>
+    </div>
+</div> -->

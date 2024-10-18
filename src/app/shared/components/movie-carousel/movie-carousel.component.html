@@ -1,0 +1,24 @@
+<div class="container px-5 mt-4 mb-5">
+    <p class="fw-semibold fs-4 my-3 ms-3">{{title}}</p>
+    <div #swiperContainer class="swiper-container">
+        <div class="swiper-wrapper">
+            <ng-container *ngFor="let movie of videoContents">
+                <div (mouseenter)="setHoverMovie(movie)" (mouseleave)="clearHoverMovie()"
+                    class="swiper-slide position-relative">
+                    <img [src]="movie.poster_path | image" alt="" class="img-fluid" />
+                    <!-- here we have added condition when to show the description and when to not show -->
+                    <div @fade *ngIf="(movie.title===this.selectedContent) || (movie.name===this.selectedContent)"
+                        class="desc p-2">
+                        <span class="fs-6 d-flex flex-wrap fw-bold">{{movie.original_title}}</span>
+                        <p class="fs-7 my-3 ">{{movie.overview | description:110}}</p>
+                        <div class=" position-absolute w-100" style="bottom: 10px;">
+                            <p class="fs-7 ">
+                                <span class="text-success position-absolute">Vote Average: {{movie.vote_average}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
